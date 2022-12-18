@@ -6,10 +6,8 @@
       <span class="input-group-text">
         <img src="https://web.archive.org//web/20221003012512im_/https://dev.rubendb.nl/rblx-tax/robux_16_black.png" width="19.6658333333">
       </span>
-      <form id="calc-form">
       <input style="text-align: left;" id="number" type="number" class="form-control" aria-label="Amount">
       <button id="btn" class="btn btn-outline-secondary" style="color: black;" type="button">Check</button>
-      </form>
     </div>
     <br>
     <div class="card">
@@ -57,5 +55,12 @@
     document.getElementById("p2").value = areturns;
     document.getElementById("p3").value = whatYouWant;
   }
-  document.getElementById("calc-form").addEventListener("sumbit", calc);
+  document.getElementById("btn").addEventListener("click", calc);
+  document.addEventListener("keydown", function(event) {
+    if (event.code === "Enter" & document.getElementById("number").value.length > 0)
+    {
+        event.preventDefault();
+        calc()
+    }
+});
 </script>
